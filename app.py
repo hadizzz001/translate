@@ -2,8 +2,10 @@ from flask import Flask, request, jsonify
 import os
 import argostranslate.package
 import argostranslate.translate
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 # Load all .argosmodel files from /models on startup
 def load_models():
